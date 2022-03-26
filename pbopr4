@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace punyarahel
+{
+    class PBO
+    {
+        static void Main(string[] args)
+        {
+            mobil spot  = new mobil();
+            spot.suara();
+            mobil inova = new kijang("jalan", "bareng", "ayang yang");
+            inova.suara();
+            Console.WriteLine(inova.mesin);
+            Console.WriteLine(inova.detail("bonceng", "ayang"));
+
+        }
+    }
+
+    class mobil //induk
+    {
+        public string? jenis;  //access modifier
+        protected string? bahan_bakar;
+        internal string? mesin;
+
+        public virtual void suara()
+        {
+            Console.WriteLine("ini suara mobil");
+        }
+
+        public void detail(string jeniss, int roda)
+        {
+            Console.WriteLine("Mobil kijang");
+        }
+        public void detail(int roda, string jeniss)
+        {
+            Console.WriteLine("Mobil spot");
+        }
+        public string detail(string jeniss2, string roda4)
+        {
+            return jeniss2;
+        }
+
+        public string detail(string roda)
+        {
+            return roda;
+        }
+
+
+    }
+    class kijang : mobil //anak
+    {
+        public kijang(string Jenis, string Bahan_Bakar, string Mesin = "Bahan bakar paling oke") //access modifier
+        {
+            this.jenis = Jenis; 
+            this.bahan_bakar = Bahan_Bakar; //atribut dari inheritance
+            this.mesin = Mesin;
+        }
+
+        public override void suara() //Inherited method
+        {
+            Console.WriteLine("Rawrr");
+        }
+
+
+
+
+    }
+    class spot : mobil
+    {
+
+    }
+}
