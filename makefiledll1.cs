@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace aljabar_library
+{
+    public class aljabar
+    {
+        public double Addition(double a, double b)
+        {
+            return a + b;
+        }
+        public double Substraction(double a, double b)
+        {
+            return a - b;
+        }
+        public double Multiplication(double a, double b)
+        {
+            return a * b;
+        }
+        public double Division(double a, double b)
+        {
+            return (a / b);
+        }
+    }
+}
